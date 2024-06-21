@@ -5,23 +5,24 @@ import {
   View,
   Text,
   DimensionValue,
+  Dimensions,
 } from "react-native";
-
-import { HelloWave } from "@/components/HelloWave";
-import ParallaxScrollView from "@/components/ParallaxScrollView";
-import { ThemedText } from "@/components/ThemedText";
-import { ThemedView } from "@/components/ThemedView";
 import Genre from "@/components/genre";
 import Popular from "@/components/popular";
+import ForYou from "@/components/ForYou";
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.titleContainer}>
         <Text style={styles.title}>Choose genre</Text>
-        <Image source={{ uri: "Vector.png" }} />
+        <Image
+          source={require("../../assets/images/Vector.png")}
+          style={{ width: 21, height: 21 }}
+        />
       </View>
-      <Genre/>
-      <Popular/>
+      <Genre />
+      <Popular />
+      <ForYou />
     </View>
   );
 }
@@ -29,16 +30,17 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#040B1C",
-    width: "100vw",
-    height: "100vh",
+    width: Dimensions.get("window").width,
+    height: Dimensions.get("window").height,
   },
   title: {
+    paddingTop: 30,
     color: "white",
     fontSize: 32,
     fontWeight: "bold",
-    margin: "auto",
+    paddingLeft: 20,
   },
-  titleContainer: {},
+  titleContainer: { display: "flex" },
   stepContainer: {
     gap: 8,
     marginBottom: 8,

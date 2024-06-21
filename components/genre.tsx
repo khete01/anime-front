@@ -36,11 +36,11 @@ export default function Genre() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    padding: 20,
+    padding: 10,
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "center",
+    gap: 10,
   },
   buttonContainer: {
     backgroundColor: "#E45959",
@@ -48,11 +48,11 @@ const styles = StyleSheet.create({
     paddingVertical: 6,
     paddingHorizontal: 14,
     margin: 5,
-    width: "100px",
-    height: "30px",
+    width: 100,
+    height: 30,
   },
   buttonText: {
-    fontSize: 14,
+    fontSize: 15,
     color: "white",
   },
 });
