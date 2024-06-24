@@ -1,11 +1,40 @@
-import Ionicons from '@expo/vector-icons/Ionicons';
-import { StyleSheet, Image, Platform } from 'react-native';
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { StyleSheet, TextInput, View, Text } from "react-native";
+import React from "react";
 
-import { Collapsible } from '@/components/Collapsible';
-import { ExternalLink } from '@/components/ExternalLink';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+export default function Search() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Search</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="Search"
+        placeholderTextColor="gray"
+      />
+    </View>
+  );
+}
 
-export default function SearchScreen() {
-  return }
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: 40,
+    alignItems: "center",
+    backgroundColor: "#040B1C",
+  },
+  title: {
+    fontSize: 24,
+    color: "white",
+    marginBottom: 20,
+  },
+  input: {
+    height: 40,
+    width: "80%",
+    borderColor: "gray",
+    borderWidth: 1,
+    borderRadius: 8,
+    paddingHorizontal: 10,
+    color: "white",
+    marginBottom: 20,
+  },
+});

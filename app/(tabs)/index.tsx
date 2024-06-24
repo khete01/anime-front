@@ -8,8 +8,8 @@ import {
   Dimensions,
 } from "react-native";
 import Genre from "@/components/genre";
-import Popular from "@/components/popular";
-import ForYou from "@/components/ForYou";
+import App from "@/components/app";
+import App1 from "@/components/app1";
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
@@ -21,8 +21,8 @@ export default function HomeScreen() {
         />
       </View>
       <Genre />
-      <Popular />
-      <ForYou />
+      <App1 />
+      <App />
     </View>
   );
 }
