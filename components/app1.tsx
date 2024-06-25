@@ -2201,14 +2201,14 @@ const styles = StyleSheet.create({
   },
   title: {
     color: "white",
-    fontSize: 30,
+    fontSize: 25,
     fontWeight: "bold",
-    paddingLeft: 20,
+    paddingLeft: 15,
   },
   container: {
     flex: 1,
     backgroundColor: "#040B1C",
-    padding: 20,
+    padding: 15,
   },
 });
 

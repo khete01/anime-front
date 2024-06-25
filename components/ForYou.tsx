@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
+import { Link } from "expo-router";
 
 const ForYou = ({ anime }) => {
   const {
@@ -11,21 +12,23 @@ const ForYou = ({ anime }) => {
   } = anime;
 
   return (
-    <View style={styles.container}>
-      <View style={styles.imgContainer}>
-        <Image
-          style={styles.image}
-          source={{ uri: medium }}
-          resizeMode="cover"
-        />
-        <View style={styles.detailsContainer}>
-          <Text style={styles.title}>{canonicalTitle}</Text>
-          <Text style={styles.episodeCount}>
-            Episodes: {episodeCount ? episodeCount : "Ongoing"}
-          </Text>
+    <Link href="/anime/id">
+      <View style={styles.container}>
+        <View style={styles.imgContainer}>
+          <Image
+            style={styles.image}
+            source={{ uri: medium }}
+            resizeMode="cover"
+          />
+          <View style={styles.detailsContainer}>
+            <Text style={styles.title}>{canonicalTitle}</Text>
+            <Text style={styles.episodeCount}>
+              Episodes: {episodeCount ? episodeCount : "Ongoing"}
+            </Text>
+          </View>
         </View>
       </View>
-    </View>
+    </Link>
   );
 };
 
@@ -41,7 +44,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 8,
     marginBottom: 15,
-    width:160,
+    width: 160,
   },
   image: {
     width: 100,
@@ -53,7 +56,7 @@ const styles = StyleSheet.create({
     // alignItems: "center",
   },
   title: {
-    fontSize: 18,
+    fontSize: 15,
     fontWeight: "bold",
     color: "white",
     textAlign: "center",
