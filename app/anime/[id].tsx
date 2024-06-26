@@ -2,12 +2,21 @@ import { useLocalSearchParams } from "expo-router";
 import { View, Text, StyleSheet, Image, Dimensions } from "react-native";
 
 export default function DetailsScreen() {
-  const { id } = useLocalSearchParams();
-
+  // const { id } = useLocalSearchParams();
+  // const {
+  //   attributes: {
+  //     canonicalTitle,
+  //     episodeCount,
+  //     posterImage: { medium },
+  //     attributes: { description },
+  //     startDate,
+  //   },
+  // } = anime;
+  //console.log(anime);
   return (
     <View style={styles.container}>
       <Image source={require("../../assets/images/medium.jpg")} />
-      
+
       <View style={styles.playButton}>
         <Image
           source={require("../../assets/images/Ellipse 6.png")}

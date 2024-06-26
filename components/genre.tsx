@@ -36,7 +36,8 @@ export default function Genre() {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
+    top: 10,
+    padding: 5,
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "flex-start",
