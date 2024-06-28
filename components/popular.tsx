@@ -1,8 +1,14 @@
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
-import { Link } from "expo-router";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { useRouter } from "expo-router";
+import { Anime } from "../app/types"; // Adjust the path as necessary
 
-const Popular = ({ anime }) => {
+interface PopularProps {
+  anime: Anime;
+}
+
+const Popular: React.FC<PopularProps> = ({ anime }) => {
+  const router = useRouter();
   const {
     attributes: {
       canonicalTitle,
@@ -11,8 +17,15 @@ const Popular = ({ anime }) => {
     },
   } = anime;
 
+  const handlePress = () => {
+    router.push({
+      pathname: `/anime/[id]`,
+      params: { anime: JSON.stringify(anime) }
+    });
+  };
+
   return (
-    <Link href="/anime/1">
+    <TouchableOpacity onPress={handlePress}>
       <View style={styles.container}>
         <View style={styles.imgContainer}>
           <Image
@@ -28,7 +41,7 @@ const Popular = ({ anime }) => {
           </View>
         </View>
       </View>
-    </Link>
+    </TouchableOpacity>
   );
 };
 
@@ -40,10 +53,8 @@ const styles = StyleSheet.create({
     height: 200,
   },
   container: {
-    // backgroundColor: "#222",
     padding: 10,
     borderRadius: 8,
-    // marginBottom: 15,
     width: 160,
   },
   image: {
@@ -53,7 +64,6 @@ const styles = StyleSheet.create({
   },
   detailsContainer: {
     margin: "auto",
-    // alignItems: "center",
   },
   title: {
     fontSize: 15,
